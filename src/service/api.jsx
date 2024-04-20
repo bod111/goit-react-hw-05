@@ -17,3 +17,28 @@ export const getTrendingMovies = async () => {
   );
   return data;
 };
+export const getMovieDetals = async (movie_id) => {
+  const { data } = await axios.get(`movie/${movie_id}?language=en-US`, options);
+  return data;
+};
+export const getMovieCast = async (movie_id) => {
+  const { data } = await axios.get(
+    `movie/${movie_id}/credits?language=en-US`,
+    options
+  );
+  return data;
+};
+export const getMovieReviews = async (movie_id) => {
+  const { data } = await axios.get(
+    `movie/${movie_id}/reviews?language=en-US`,
+    options
+  );
+  return data;
+};
+export const getSearchMovie = async (valueInput) => {
+  const { data } = await axios.get(
+    `search/movie?query=${valueInput}&include_adult=false&language=en-US&page=1`,
+    options
+  );
+  return data;
+};

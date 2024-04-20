@@ -1,0 +1,24 @@
+.btn{
+  /* width: 90px; */
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.movieContainer{
+  display: block;
+  padding: 0 10px;
+}
+
+.movieBox{
+  display: flex;
+}
+
+.movieDiscrBox{
+  margin-left: 20px;
+}
+.genres{
+  padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 14px;
+  flex-wrap: wrap;
+}

@@ -1,17 +1,18 @@
-// import React from "react";
+import css from "./MovieList.module.css";
 
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function MovieList({ movies }) {
+  const { pathname } = useLocation();
   return (
-    <ul>
+    <ul className={css.list}>
       {movies.map((movie) => {
         return (
-          <NavLink key={movie.id} to={`/movies/${movie.id}`}>
-            <li>
-              <p>{movie.original_title}</p>
-            </li>
-          </NavLink>
+          <li className={css.component} key={movie.id}>
+            <Link to={`/movies/${movie.id}`} state={pathname}>
+              <p>- {movie.title}</p>
+            </Link>
+          </li>
         );
       })}
     </ul>

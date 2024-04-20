@@ -1,0 +1,6 @@
+.cast{
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  line-height: 1;
+}
