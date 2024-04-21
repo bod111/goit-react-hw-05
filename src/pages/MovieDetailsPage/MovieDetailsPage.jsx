@@ -5,13 +5,9 @@ import css from "./MovieDetailsPage.module.css";
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
-
   const [movieDetails, setMovieDetails] = useState(null);
-
   const { state } = useLocation();
-  console.log("MovieDetailsPage ~ state:", state);
-  const prevPath = useRef(state);
-  console.log("MovieDetailsPage ~ prevPath:", prevPath);
+  const prevPath = useRef(state ?? "/movies");
 
   useEffect(() => {
     getMovieDetals(movieId)
@@ -20,7 +16,7 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   return (
-    <container className={css.movieContainer}>
+    <div className={css.movieContainer}>
       <NavLink to={prevPath.current}>
         <button className={css.btn} type="button">
           {"<- Go back"}
@@ -69,6 +65,6 @@ export default function MovieDetailsPage() {
           </Suspense>
         </div>
       )}
-    </container>
+    </div>
   );
 }
